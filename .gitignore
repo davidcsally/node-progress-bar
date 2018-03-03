@@ -9,3 +9,6 @@ build
 
 # vscode settings
 .vscode
+
+# code coverage
+coverage
