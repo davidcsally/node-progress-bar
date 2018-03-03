@@ -1,0 +1,14 @@
+{
+  "name": "progress-bar",
+  "version": "0.9",
+  "description": "A progress bar for operations in Node.js",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --collectCoverage true"
+  },
+  "author": "David Sally",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.4.2"
+  }
+}
