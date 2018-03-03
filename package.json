@@ -1,11 +1,20 @@
 {
-  "name": "progress-bar",
-  "version": "0.9",
+  "name": "node-progress-bar",
+  "version": "1.0.0",
   "description": "A progress bar for operations in Node.js",
   "main": "src/index.js",
   "scripts": {
     "test": "jest --collectCoverage true"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidcsally/node-progress-bar.git"
+  },
+  "homepage": "https://github.com/davidcsally/node-progress-bar",
+  "bugs": "https://github.com/davidcsally/node-progress-bar/issues",
+  "keywords": [
+    "node", "console.log", "progress bar", "progress-bar", "node-progress-bar"
+  ],
   "author": "David Sally",
   "license": "ISC",
   "devDependencies": {
