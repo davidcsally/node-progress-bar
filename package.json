@@ -4,7 +4,8 @@
   "description": "A progress bar for operations in Node.js",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --collectCoverage true"
+    "test": "NODE_PATH=. node_modules/.bin/jest",
+    "coveralls": "NODE_PATH=. node_modules/.bin/jest && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,11 @@
   "homepage": "https://github.com/davidcsally/node-progress-bar",
   "bugs": "https://github.com/davidcsally/node-progress-bar/issues",
   "keywords": [
-    "node", "console.log", "progress bar", "progress-bar", "node-progress-bar"
+    "node",
+    "console.log",
+    "progress bar",
+    "progress-bar",
+    "node-progress-bar"
   ],
   "author": "David Sally",
   "license": "ISC",
