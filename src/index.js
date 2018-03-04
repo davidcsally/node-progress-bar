@@ -4,7 +4,7 @@ const progBar = (i) => {
   const dashes = Math.floor(i * (BAR_LENGTH * .01) % BAR_LENGTH);
   const spaces = BAR_LENGTH - dashes;
   if (i === 100) return new Array(BAR_LENGTH).join('-')
-  return Array.apply(null, Array(BAR_LENGTH-1)).map((v, i) => {
+  return Array.apply(null, Array(BAR_LENGTH - 1)).map((v, i) => {
     if (i < dashes) return '-';
     return ' ';
   }).join('');
@@ -36,7 +36,7 @@ const printProgress = (index, total, options = {}) => {
  */
 module.exports = function (index, total, options = {}) {
   try {
-    if (total === 0) throw new Error('cannot divide by zero');    
+    if (total === 0) throw new Error('cannot divide by zero');
     printProgress(index, total, options);
     return 0;
   }
