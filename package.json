@@ -23,6 +23,7 @@
   "author": "David Sally",
   "license": "ISC",
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "jest": "^22.4.2"
   }
 }
