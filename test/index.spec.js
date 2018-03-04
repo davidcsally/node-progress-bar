@@ -19,7 +19,16 @@ describe('printProgress', () => {
   });
 
   it('should return 1 on error', () => {
-    expect(print(1, 0)).toBe(1);
+    function divideByZero() {
+      print(1, 0);
+    }
+    try {
+      divideByZero();
+    }
+    catch (e) {
+      expect(divideByZero).toThrow();
+      expect(divideByZero).toBe(1);
+    }
   });
 
   it('should accept custom lengths', () => {
