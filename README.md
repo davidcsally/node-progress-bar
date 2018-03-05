@@ -23,12 +23,18 @@ at the top of your node file, add:
 then call the function in your operation!
 
 ```
-for (let i = 0; i < 100; i += 1) {
-  progressBar(i, 100);
-};
+const test = (i) => {
+  if (i <= 100) {
+    setTimeout(() => {
+      print(i, 100);
+      test(i += 1);
+    }, 50);
+  }
+}
+test(0);
 ```
 
-it's that simple!
+It's that simple!
 
 Coming soon... 
   1. [ ] custom print messages
