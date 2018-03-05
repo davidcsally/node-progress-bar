@@ -1,27 +1,65 @@
-let BAR_LENGTH = 15;
+const colors = require('./colors');
+const { setBarLength, setBgColor, setTextColor, setProgChar, setJoinChar } = require('./utils');
+
+let BAR_LENGTH = 10;
+let TEXT_COLOR = colors.default;
+let BG_COLOR = colors.default;
+let JOIN_CHAR = '_';
+let PROG_CHAR = ' ';
 
 const progBar = (i) => {
-  const dashes = Math.floor(i * (BAR_LENGTH * .01) % BAR_LENGTH);
+  const dashes = Math.floor(i * (BAR_LENGTH * 0.01) % BAR_LENGTH);
   const spaces = BAR_LENGTH - dashes;
-  if (i === 100) return new Array(BAR_LENGTH).join('-')
-  return Array.apply(null, Array(BAR_LENGTH - 1)).map((v, i) => {
-    if (i < dashes) return '-';
-    return ' ';
-  }).join('');
+
+  let progress = (PROG_CHAR === ` `) ? (BG_COLOR + ``) : (TEXT_COLOR + ``);
+  let resetFlag = false;
+
+  if (i === 100) {
+    for (let i = 0; i < BAR_LENGTH; i += 1) {
+      progress += PROG_CHAR;
+    }
+    progress += colors.default;
+    return progress;
+  }
+
+  for (let i = 0; i < BAR_LENGTH; i += 1) {
+    if (i < dashes) {
+      progress += PROG_CHAR;
+    }
+    else {
+      if (!resetFlag) {
+        progress += colors.default;
+        resetFlag = true;
+      }
+      progress += JOIN_CHAR;
+    }
+  }
+  return progress;
 };
 
 const bufferMessage = (n) => {
   if (String(n).length <= 1) return `  ${n}`;
   if (String(n).length <= 2) return ` ${n}`;
   return `${n}`
-}
+};
 
-const printProgress = (index, total, options = {}) => {
-  const { length } = options;
-  if (length) BAR_LENGTH = length;
+const processOptions = (options) => {
+  const { barLength, textColor, joinChar, progChar, bgColor } = options;
+  if (progChar) PROG_CHAR = setProgChar(progChar);
+  if (barLength) BAR_LENGTH = setBarLength(barLength);
+  if (textColor) TEXT_COLOR = setTextColor(textColor);
+  if (joinChar) JOIN_CHAR = setJoinChar(joinChar);
+  if (bgColor) BG_COLOR = setBgColor(bgColor);
+};
+
+const printProgress = (index, total = 100, options = {}) => {
+  if (options) processOptions(options);
   const percent = Math.round(index / total * 100);
-  if (index === total) process.stdout.write(`Progress: ${bufferMessage(percent)}% complete [${progBar(percent)}] ✅                \n`);
-  else process.stdout.write(`Progress: ${bufferMessage(percent)}% complete [${progBar(percent)}]                \r`);
+
+  if (index === total) process.stdout
+    .write(`✅ |${progBar(percent)}` + colors.default + `|  ${index}/${total}  ${bufferMessage(percent)}% complete            \n`);
+  else process.stdout
+    .write(`   [${progBar(percent)}` + colors.default + `|  ${index}/${total}  ${bufferMessage(percent)}%                     \r`);
 };
 
 /** Prints a progress bar in Node.js when iterating,
