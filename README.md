@@ -1,5 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/davidcsally/node-progress-bar/badge.svg?branch=master)](https://coveralls.io/github/davidcsally/node-progress-bar?branch=master)
 [![Build Status](https://travis-ci.org/davidcsally/node-progress-bar.svg?branch=master)](https://travis-ci.org/davidcsally/node-progress-bar)
+[![npm version](https://badge.fury.io/js/node-progress-bar.svg)](https://badge.fury.io/js/node-progress-bar)
 
 Ever wanted to print the progress of a loop you are running, but not clutter up your console?
 
