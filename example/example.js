@@ -1,13 +1,21 @@
 const print = require('../src/index');
 
+const options = {
+  barLength: 10,
+  textColor: 'yellow',
+  progChar: 'x',
+  joinChar: '_',
+};
+
 const test = (i) => {
   if (i <= 100) {
     setTimeout(() => {
-      print(i, 100, { length: 10 });
+      print(i, 100, options);
       test(i += 1);
     }, 50);
   }
 }
+console.log('\n\n\n');
 console.log('** Starting Loop **');
 test(0);
 

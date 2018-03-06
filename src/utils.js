@@ -1,7 +1,6 @@
 const colors = require('./colors');
 
 module.exports = {
-  setTextColor: (color) => color,
   setBarLength: (barLength) => barLength,
   setJoinChar: (char) => char,
   setProgChar: (char) => char,
@@ -9,6 +8,12 @@ module.exports = {
     switch (color) {
       case 'magenta':
         return colors.bgMagenta;
+      default:
+        return colors.default;
+    }
+  },
+  setTextColor: (color) => {
+    switch (color) {
       case 'yellow':
         return colors.yellow;
       default:

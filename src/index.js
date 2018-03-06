@@ -57,9 +57,9 @@ const printProgress = (index, total = 100, options = {}) => {
   const percent = Math.round(index / total * 100);
 
   if (index === total) process.stdout
-    .write(`✅ |${progBar(percent)}` + colors.default + `|  ${index}/${total}  ${bufferMessage(percent)}% complete            \n`);
+    .write(`✅  |${progBar(percent)}` + colors.default + `|  ${index}/${total}  ${bufferMessage(percent)}% complete            \n`);
   else process.stdout
-    .write(`   [${progBar(percent)}` + colors.default + `|  ${index}/${total}  ${bufferMessage(percent)}%                     \r`);
+    .write(`    |${progBar(percent)}` + colors.default + `|  ${index}/${total}  ${bufferMessage(percent)}%                     \r`);
 };
 
 /** Prints a progress bar in Node.js when iterating,
