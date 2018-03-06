@@ -1,8 +1,8 @@
 {
   "name": "node-progress-bar",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "description": "A progress bar for operations in Node.js",
-  "main": "src/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "build": "webpack -p",
     "test": "NODE_PATH=. node_modules/.bin/jest",
@@ -33,6 +33,7 @@
     "webpack-cli": "^2.0.10"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ]
 }
