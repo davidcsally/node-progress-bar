@@ -1,10 +1,11 @@
 const print = require('../src/index');
 
 const options = {
-  barLength: 10,
+  barLength: 25,
   textColor: 'yellow',
+  bgColor: 'magenta',
   progChar: 'x',
-  joinChar: '_',
+  joinChar: '-',
 };
 
 const test = (i) => {
@@ -15,6 +16,7 @@ const test = (i) => {
     }, 50);
   }
 }
+
 console.log('\n\n\n');
 console.log('** Starting Loop **');
 test(0);
