@@ -2,23 +2,24 @@ const colors = require('./colors');
 const { setBarLength, setBgColor, setTextColor, setProgChar, setJoinChar } = require('./utils');
 
 let BAR_LENGTH = 10;
-let TEXT_COLOR = colors.default;
-let BG_COLOR = colors.default;
+let TEXT_COLOR = colors.FgDefault;
+let BG_COLOR = colors.BgDefault;
 let JOIN_CHAR = '_';
 let PROG_CHAR = ' ';
+let CRAZY = '';
 
 const progBar = (i) => {
   const dashes = Math.floor(i * (BAR_LENGTH * 0.01) % BAR_LENGTH);
   const spaces = BAR_LENGTH - dashes;
 
-  let progress = (PROG_CHAR === ` `) ? (BG_COLOR + ``) : (TEXT_COLOR + ``);
+  let progress = `${BG_COLOR}${TEXT_COLOR}`;
   let resetFlag = false;
 
   if (i === 100) {
     for (let i = 0; i < BAR_LENGTH; i += 1) {
       progress += PROG_CHAR;
     }
-    progress += colors.default;
+    progress += colors.reset;
     return progress;
   }
 
@@ -28,7 +29,7 @@ const progBar = (i) => {
     }
     else {
       if (!resetFlag) {
-        progress += colors.default;
+        progress += colors.reset;
         resetFlag = true;
       }
       progress += JOIN_CHAR;
@@ -57,9 +58,9 @@ const printProgress = (index, total = 100, options = {}) => {
   const percent = Math.round(index / total * 100);
 
   if (index === total) process.stdout
-    .write(`✅  |${progBar(percent)}` + colors.default + `|  ${index}/${total}  ${bufferMessage(percent)}% complete            \n`);
+    .write(`✅  |${progBar(percent)}` + `|  ${index}/${total}  ${bufferMessage(percent)}% complete            \n`);
   else process.stdout
-    .write(`    |${progBar(percent)}` + colors.default + `|  ${index}/${total}  ${bufferMessage(percent)}%                     \r`);
+    .write(`    |${progBar(percent)}` + `|  ${index}/${total}  ${bufferMessage(percent)}%                     \r`);
 };
 
 /** Prints a progress bar in Node.js when iterating,
