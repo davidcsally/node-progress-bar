@@ -12,3 +12,4 @@ deploy:
   local_dir: dist
   on:
     branch: production
+ 
