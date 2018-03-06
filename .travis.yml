@@ -9,6 +9,5 @@ deploy:
   api_key:
     secure: Pb3eTY5gnoXNwMloSyLseELIH+n1lKtEI7nCEtH78Q0mProHuCBj8mVcVE01sF4gR2BpBBcWKSnQmTUH/GZbkYNWTOqF03wThV5VMlWN3vtbCpygue/sGSm7vma2xMAUYy+8NP4l3AJcV+ih1jv4qTlpqiMIm2yXpqC3GYaEIMBA8stgQwgffw9a4xYsvmF5gnLcNDbpjfyE39FCAk4gMHXMN1N3IvXheihC2K+UxencKkmgRnC2S8qbeyctQGxOOIxiN8LoMUsbtdP23g1TDZlPJ/u11W6F89G3WhOEFx4H02Wu8Zt6gZj34MYWGOnszCU2LSbVBX/G+FV57cKJq+Kfjw/WbrLiXUBMN9OmPvm2pvIeeuEvd8vWnX8g/dzPXCsutGt8W3bGrQDTDky+oU1Awg4dD95LZ05KNbfvjNmvW6adI/8op+C3jiDSbhk0zMtuQhs5cZibNdTWw5XlI6FJ6xryFlC4NW8/smVCOBdkXOPcjgTC4QXx/GUim0Kq2CEWyeD1eEMz++eeS1p1nH3GMs799Lm3baLa5vtldg4m1KxvHoGgoElAzxxYBfdUAvGFHthiK/taI8Iev9wVmVbyF8s8jt2cUndeA7t4+yy2SaQe0Bwpaoc6hpfq4I8HIWpDwfNViTew+Dxkv7unp0W7+xbnXyPcgeg0vL4aRzU=
   on:
-    tags: true
     repo: davidcsally/node-progress-bar
     branch: production
