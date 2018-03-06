@@ -3,6 +3,7 @@ node_js:
 - stable
 after_success:
 - npm run coveralls
+- npm run build
 deploy:
   skip_cleanup: true
   provider: npm
@@ -12,4 +13,3 @@ deploy:
   on:
     repo: davidcsally/node-progress-bar
     branch: production
-    skip_cleanup: true
