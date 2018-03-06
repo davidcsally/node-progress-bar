@@ -12,3 +12,4 @@ deploy:
   on:
     repo: davidcsally/node-progress-bar
     branch: production
+    skip_cleanup: true

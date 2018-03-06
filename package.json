@@ -1,6 +1,6 @@
 {
   "name": "node-progress-bar",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A progress bar for operations in Node.js",
   "main": "dist/main.js",
   "scripts": {
