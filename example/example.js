@@ -1,4 +1,4 @@
-const print = require('../src/index');
+const progressBar = require('../dist/main');
 
 const options = {
   barLength: 25,
@@ -11,7 +11,7 @@ const options = {
 const test = (i) => {
   if (i <= 100) {
     setTimeout(() => {
-      print(i, 100, options);
+      progressBar(i, 100, options);
       test(i += 1);
     }, 50);
   }
