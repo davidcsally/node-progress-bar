@@ -63,17 +63,18 @@ const printProgress = (index, total = 100, options = {}) => {
     .write(`    |${progBar(percent)}` + `|  ${index}/${total}  ${bufferMessage(percent)}%                     \r`);
 };
 
-/** Prints a progress bar in Node.js when iterating,
+/**
+ * Prints a progress bar in Node.js when iterating,
  * over a know amount of items. Place this function in your
  * loop and pass it the current index and total number of 
  * iterations.
  * 
- * @param index - index value
- * @param total - total count
- * @param options - object of optional parameters
+ * @param {number} index - index value
+ * @param {number} total - total count
+ * @param {object} options - object of optional parameters
  * @returns 0 (success) 1 (error)
  */
-module.exports = function (index, total, options = {}) {
+module.exports = function(index, total, options = {}) => {
   try {
     if (total === 0) throw new Error('cannot divide by zero');
     printProgress(index, total, options);
