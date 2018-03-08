@@ -1,4 +1,4 @@
-const progressBar = require('../dist/main');
+const progressBar = require('../src');
 
 const options = {
   barLength: 25,
