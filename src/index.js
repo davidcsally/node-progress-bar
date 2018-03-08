@@ -74,7 +74,7 @@ const printProgress = (index, total = 100, options = {}) => {
  * @param {object} options - object of optional parameters
  * @returns 0 (success) 1 (error)
  */
-module.exports = function(index, total, options = {}) => {
+module.exports = function(index, total, options = {}) {
   try {
     if (total === 0) throw new Error('cannot divide by zero');
     printProgress(index, total, options);
